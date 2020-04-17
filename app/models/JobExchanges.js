@@ -1,32 +1,28 @@
 module.exports = (sequelize, Sequelize) => {
     const JobExchange = sequelize.define("jobexchanges", {
-      id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true
-      },
       name: {
         type: Sequelize.STRING
       },
       age:{
-          type: Sequelize.INT
+        type: Sequelize.INTEGER
       },
       gender:{
-          type: Sequelize.STRING
+        type: Sequelize.STRING
       },
       civilstatus: {
-          type: Sequelize.STRING
+        type: Sequelize.STRING
       },
       phone: {
-          type: Sequelize.INT
+        type: Sequelize.STRING
       },
       occupation: {
-          type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       jobname: {
-          type: Sequelize.STRING
+        type: Sequelize.STRING
       }
 
     });
   
-    return Role;
+    return JobExchange;
   };
