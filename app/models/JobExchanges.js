@@ -8,7 +8,7 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING
       },
       age:{
-          type: Sequelize.INT
+          type: Sequelize.INTEGER
       },
       gender:{
           type: Sequelize.STRING
@@ -17,7 +17,7 @@ module.exports = (sequelize, Sequelize) => {
           type: Sequelize.STRING
       },
       phone: {
-          type: Sequelize.INT
+          type: Sequelize.STRING
       },
       occupation: {
           type: Sequelize.INTEGER
@@ -28,5 +28,5 @@ module.exports = (sequelize, Sequelize) => {
 
     });
   
-    return Role;
+    return JobExchange;
   };
