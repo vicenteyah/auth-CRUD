@@ -6,4 +6,12 @@ module.exports = function(app){
         "/api/JobExchanges/jobexchanges",
         controller.jobrequest
     );
+    app.get(
+        "/api/JobExchanges/jobexchanges",
+        controller.getJobrequests
+    )
+    app.get(
+        "/api/JobExchanges/jobexchanges/:id",
+        controller.getAJobrequest
+    )
 }
