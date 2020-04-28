@@ -16,6 +16,27 @@ exports.promotionrequest = (req, res) => {
     });
 }
 
+exports.getPromotionrequest = (req, res)=>{
+    Promotion.findAll({}).then(promotion => {
+        res.status(200).send(promotion)
+    }).catch(error =>{
+        console.log(error)
+        res.status(404).send({message:"Items not found"})
+    });
+}
+
+exports.getAPromotionrequest = (req, res) => {
+    Promotion.findOne({
+        where: {
+            id:req.params.id
+        }
+    }).then(promotion => {
+        res.status(200).send(promotion)
+    }).catch(error => {
+        res.status(404).send({message: "Item not found"})
+    });
+}
+
 exports.deletePromotion = (req,res) => {
     Promotion.destroy({
         where:{
