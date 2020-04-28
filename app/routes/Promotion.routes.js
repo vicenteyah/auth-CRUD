@@ -9,5 +9,13 @@ module.exports = function(app){
     app.delete(
         "/api/Promotions/promotions/:id",
         controller.deletePromotion
+    );
+    app.get(
+        "/api/Promotions/promotions/",
+        controller.getPromotionrequest
+    );
+    app.get(
+        "/api/Promotions/promotions/:id",
+        controller.getAPromotionrequest
     )
 }
