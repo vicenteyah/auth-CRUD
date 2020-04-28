@@ -6,4 +6,8 @@ module.exports = function(app){
         "/api/Promotions/promotions",
         controller.promotionrequest
     );
+    app.delete(
+        "/api/Promotions/promotions/:id",
+        controller.deletePromotion
+    )
 }
