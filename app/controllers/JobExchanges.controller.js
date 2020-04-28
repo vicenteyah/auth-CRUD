@@ -51,7 +51,7 @@ exports.deleteJobrequest = (req, res) => {
         }
     }).then(data => {
         res.status(200).send({message: "Item deleted successfully"})
-    }).cacth(error => {
+    }).catch(error => {
         res.status(404).send({message: "Item not found"})
     });
 }
