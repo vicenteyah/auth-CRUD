@@ -17,3 +17,23 @@ exports.feedbackrequest = (req, res)=>{
         console.log(error)
     });
 }
+
+exports.getFeedbacks = (req, res) =>{
+    Feedback.findAll().then(rows =>{
+        res.status(200).send(rows)
+    }).catch(error =>{
+        res.status(404).send({message:'Items not found'})
+    })
+}
+
+exports.getAfeedback = (req,res)=>{
+    Feedback.findOne({
+        where:{
+            id: req.params.id
+        }
+    }).then(row =>{
+        res.status(200).send(row)
+    }).catch(error =>{
+        res.status(404).send({message:'item not found'})
+    })
+}
