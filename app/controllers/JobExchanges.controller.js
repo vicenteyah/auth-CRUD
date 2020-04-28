@@ -55,3 +55,25 @@ exports.deleteJobrequest = (req, res) => {
         res.status(404).send({message: "Item not found"})
     });
 }
+
+exports.updateJobrequest = (req, res) => {
+    Job.update({
+        name: req.body.name,
+        age: req.body.age,
+        gender: req.body.gender,
+        civilstatus: req.body.civilstatus ,
+        phone: req.body.phone,
+	    occupation: req.body.occupation,
+	    jobname : req.body.jobname  
+    },
+    {
+       where:{
+            id: req.params.id
+        }
+    }).then(rowsUpdate =>{
+        console.log(rowsUpdate)
+        res.status(200).send({message:"rows updated successfully"})
+    }).catch(error =>{
+        res.status(404).send({message:"Row not found"})
+    });
+}
