@@ -15,3 +15,15 @@ exports.promotionrequest = (req, res) => {
         console.log(error)
     });
 }
+
+exports.deletePromotion = (req,res) => {
+    Promotion.destroy({
+        where:{
+            id: req.params.id
+        }
+    }).then(data =>{
+        res.status(200).send({message: 'item deleted successfully'})
+    }).catch(error =>{
+        res.status(404).send({message:'item not found'})
+    })
+}
