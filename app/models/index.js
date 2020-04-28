@@ -27,7 +27,8 @@ db.sequelize = sequelize;
 db.user = require("../models/user.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
 db.JobExchanges = require ("../models/JobExchanges.js")(sequelize,Sequelize);
-db.Feedback = require ("./feedback.model.js")(sequelize,Sequelize);
+db.Feedback = require ("../models/feedback.model.js")(sequelize,Sequelize);
+db.Promotion = require("../models/Promotion.model.js")(sequelize, Sequelize)
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",
