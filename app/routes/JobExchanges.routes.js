@@ -18,4 +18,8 @@ module.exports = function(app){
         "/api/JobExchanges/jobexchanges/:id",
         controller.deleteJobrequest
     );
+    app.put(
+        "/api/JobExchanges/jobexchanges/:id",
+        controller.updateJobrequest
+    );
 }
