@@ -43,3 +43,15 @@ exports.getAJobrequest = (req,res) =>{
         res.status(404).send({message:"item not found"})
     })
 }
+
+exports.deleteJobrequest = (req, res) => {
+    Job.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(data => {
+        res.status(200).send({message: "Item deleted successfully"})
+    }).cacth(error => {
+        res.status(404).send({message: "Item not found"})
+    });
+}

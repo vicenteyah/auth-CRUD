@@ -13,5 +13,9 @@ module.exports = function(app){
     app.get(
         "/api/JobExchanges/jobexchanges/:id",
         controller.getAJobrequest
-    )
+    );
+    app.delete(
+        "/api/JobExchanges/jobexchanges/:id",
+        controller.deleteJobrequest
+    );
 }
