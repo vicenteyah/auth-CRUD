@@ -22,3 +22,24 @@ exports.jobrequest = (req, res) => {
     });
     
 };
+
+exports.getJobrequests = (req,res) =>{
+    Job.findAll({}).then(job =>{
+        res.status(200).send(job)
+    }).catch(error => {
+        console.log(error)
+        res.status(404).send({message:"Bad implementation"})
+    })
+}
+
+exports.getAJobrequest = (req,res) =>{
+    Job.findOne({
+        where:{
+            id:req.params.id
+        }
+    }).then(job=>{
+        res.status(200).send(job)
+    }).catch(err =>{
+        res.status(404).send({message:"item not found"})
+    })
+}
