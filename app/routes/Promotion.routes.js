@@ -17,5 +17,9 @@ module.exports = function(app){
     app.get(
         "/api/Promotions/promotions/:id",
         controller.getAPromotionrequest
-    )
+    );
+    app.put(
+        "/api/Promotions/promotions/:id",
+        controller.updatePromotionrequest
+    );
 }
