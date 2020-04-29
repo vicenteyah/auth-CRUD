@@ -48,3 +48,21 @@ exports.deletePromotion = (req,res) => {
         res.status(404).send({message:'item not found'})
     })
 }
+
+exports.updatePromotionrequest = (req, res) => {
+    Promotion.update({
+        packagename: req.body.packagename,
+        description: req.body.description,
+        price: req.body.price
+    },
+    {
+       where:{
+            id: req.params.id
+        }
+    }).then(rowsUpdate =>{
+        console.log(rowsUpdate)
+        res.status(200).send({message:"Promotion updated successfully"})
+    }).catch(error =>{
+        res.status(404).send({message:"Promotion not found"})
+    });
+}
