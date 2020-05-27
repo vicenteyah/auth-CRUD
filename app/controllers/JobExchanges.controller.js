@@ -3,7 +3,7 @@ const Job = db.JobExchanges;
 
 //const Op = db.Sequelize.Op;
 
-exports.jobrequest = (req, res) => {
+exports.jobrequest = (req, res) => { //createJobrequest
     Job.create({
         name: req.body.name,
         age: req.body.age,
@@ -64,7 +64,8 @@ exports.updateJobrequest = (req, res) => {
         civilstatus: req.body.civilstatus ,
         phone: req.body.phone,
 	    occupation: req.body.occupation,
-	    jobname : req.body.jobname  
+        jobname : req.body.jobname  
+        //store: req.body.store
     },
     {
        where:{
