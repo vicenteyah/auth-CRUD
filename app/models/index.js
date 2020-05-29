@@ -29,6 +29,7 @@ db.role = require("../models/role.model.js")(sequelize, Sequelize);
 db.JobExchanges = require ("../models/JobExchanges.js")(sequelize,Sequelize);
 db.Feedback = require ("../models/feedback.model.js")(sequelize,Sequelize);
 db.Promotion = require("../models/Promotion.model.js")(sequelize, Sequelize)
+db.Purchases = require("../models/Purchases.model")(sequelize,Sequelize)
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",
@@ -40,6 +41,8 @@ db.user.belongsToMany(db.role, {
   foreignKey: "userId",
   otherKey: "roleId"
 });
+//db.user.hasMany(db.Purchases)
+//db.Promotion.hasMany(db.Purchases)
 
 db.ROLES = ["user", "admin", "moderator"];
 
