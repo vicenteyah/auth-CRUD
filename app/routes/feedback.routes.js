@@ -6,4 +6,12 @@ module.exports = function(app){
         "/api/Feedback/feedbacks",
         controller.feedbackrequest
     );
+    app.get(
+        "/api/Feedback/feedbacks",
+        controller.getFeedbacks
+    )
+    app.get(
+        "/api/Feedback/feedbacks/:id",
+        controller.getAfeedback
+    )
 }
