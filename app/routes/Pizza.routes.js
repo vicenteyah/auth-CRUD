@@ -13,5 +13,9 @@ module.exports = function(app){
     app.get(
         "/api/Pizza/pizzas",
         controller.getPizzasRequest
-    )
+    );
+    app.put(
+        "/api/Pizza/pizzas/:id",
+        controller.updatePizzasRequest
+    );
 }
