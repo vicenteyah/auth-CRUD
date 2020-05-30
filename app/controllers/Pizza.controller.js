@@ -12,3 +12,24 @@ exports.createPizzasRequest = (req, res) => {
         res.status(404).send({message: "cannot post due to internal server error"})
     })
 };
+
+exports.getPizzasRequest = (req, res) => {
+    Pizza.findAll({}).then( pizza => {
+        res.status(200).send(pizza)
+    }).catch(error => {
+        console.log(error);
+        res.status(404).send({message: "item not found"})        
+    });
+}
+
+exports.getAPizzaRequest = (req, res) => {
+    Pizza.findOne({
+        where: {
+            id: req.params.id
+        }
+    }).then(pizza => {
+        res.status(200).send(pizza)
+    }).catch(error => {
+        res.status(404).send({message:"item not found"})
+    })
+}
