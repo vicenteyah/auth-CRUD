@@ -3,6 +3,7 @@ const Promotion = db.Promotion;
 
 exports.promotionrequest = (req, res) => {
     Promotion.create({
+        imgurl: req.body.imgurl,
         packagename: req.body.packagename,
         description: req.body.description,
         price: req.body.price
@@ -51,6 +52,7 @@ exports.deletePromotion = (req,res) => {
 
 exports.updatePromotionrequest = (req, res) => {
     Promotion.update({
+        imgurl: req.body.imgurl,
         packagename: req.body.packagename,
         description: req.body.description,
         price: req.body.price
