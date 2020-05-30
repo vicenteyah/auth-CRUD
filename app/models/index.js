@@ -30,6 +30,7 @@ db.JobExchanges = require ("../models/JobExchanges.js")(sequelize,Sequelize);
 db.Feedback = require ("../models/feedback.model.js")(sequelize,Sequelize);
 db.Promotion = require("../models/Promotion.model.js")(sequelize, Sequelize)
 db.Purchases = require("../models/Purchases.model")(sequelize,Sequelize)
+db.Pizza = require("../models/Pizza.model.js")(sequelize,Sequelize);
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",
