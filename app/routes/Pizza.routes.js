@@ -6,4 +6,12 @@ module.exports = function(app){
         "/api/Pizza/pizzas",
         controller.createPizzasRequest
     );
+    app.get(
+        "/api/Pizza/pizzas/:id",
+        controller.getAPizzaRequest
+    );
+    app.get(
+        "/api/Pizza/pizzas",
+        controller.getPizzasRequest
+    )
 }
