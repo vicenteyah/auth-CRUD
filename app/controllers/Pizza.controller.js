@@ -51,3 +51,15 @@ exports.updatePizzasRequest = (req, res) => {
         res.status(404).send({message: "Pizza not found"})
     })
 }
+
+exports.deletePizzasRequest = (req, res) => {
+    Pizza.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(data => {
+        res.status(200).send({message:"item deleted successfully"})
+    }).catch(error =>{
+        res.status(404).send({message:"item not found"})
+    })
+}
