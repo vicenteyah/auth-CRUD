@@ -18,4 +18,8 @@ module.exports = function(app){
         "/api/Pizza/pizzas/:id",
         controller.updatePizzasRequest
     );
+    app.delete(
+        "/api/Pizza/pizzas/:id",
+        controller.deletePizzasRequest
+    );
 }
