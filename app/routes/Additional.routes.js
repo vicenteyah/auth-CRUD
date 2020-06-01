@@ -18,4 +18,8 @@ module.exports = function(app){
         "/api/Additional/additionals/:id",
         controller.deleteAdditionalRequest
     );
+    app.put(
+        "/api/Additional/additionals/:id",
+        controller.updateAdditionalRequest
+    );
 }
