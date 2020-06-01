@@ -33,3 +33,17 @@ exports.getAAdditionalRequest = (req, res) => {
         res.status(404).send({message: "item not found"})
     })
 }
+
+exports.deleteAdditionalRequest = (req, res) => {
+    Additional.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(addi => {
+        res.status(200).send({message: "item deleted successfully"})
+    }).catch(error => {
+        res.status(404).send({message:"item not found"})
+        console.log(error);
+        
+    })
+}

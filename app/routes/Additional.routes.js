@@ -14,4 +14,8 @@ module.exports = function(app){
         "/api/Additional/additionals/:id",
         controller.getAAdditionalRequest
     );
+    app.delete(
+        "/api/Additional/additionals/:id",
+        controller.deleteAdditionalRequest
+    );
 }
