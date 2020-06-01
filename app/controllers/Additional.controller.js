@@ -47,3 +47,21 @@ exports.deleteAdditionalRequest = (req, res) => {
         
     })
 }
+
+exports.updateAdditionalRequest = (req, res) => {
+    Additional.update({
+        imgurl: req.body.imgurl,
+        additionalName: req.body.additionalName,
+        price: req.body.price
+    },
+    {
+        where: {
+            id: req.params.id
+        }
+    }).then(addiUpdate => {
+        res.status(200).send({message:"rows updated successfully"})
+        
+    }).catch(error => {
+        res.status(404).send({message:"item not found"})
+    })
+}
