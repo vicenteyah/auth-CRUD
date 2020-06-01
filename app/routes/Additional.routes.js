@@ -6,4 +6,12 @@ module.exports = function(app){
       "/api/Additional/additionals",
       controller.createAdditionalRequest  
     );
+    app.get(
+        "/api/Additional/additionals",
+        controller.getAdditionalRequest
+    );
+    app.get(
+        "/api/Additional/additionals/:id",
+        controller.getAAdditionalRequest
+    );
 }
