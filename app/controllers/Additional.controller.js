@@ -13,3 +13,23 @@ exports.createAdditionalRequest = (req, res) => {
         console.log(error);        
     });
 }
+
+exports.getAdditionalRequest = (req, res) => {
+    Additional.findAll({}).then(additional => {
+        res.status(200).send(additional)
+    }).catch(error => {
+        res.status(404).send({message: "item not found"})
+    });
+}
+
+exports.getAAdditionalRequest = (req, res) => {
+    Additional.findOne({
+        where: {
+            id: req.params.id
+        }
+    }).then(additional =>{
+        res.status(200).send(additional)
+    }).catch(error => {
+        res.status(404).send({message: "item not found"})
+    })
+}
