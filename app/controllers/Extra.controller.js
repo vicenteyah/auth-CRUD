@@ -34,3 +34,15 @@ exports.getAnExtraRequest = (req, res) => {
         res.status(404).send({message:"item not found"})
     })
 }
+
+exports.deleteExtraRequest = (req, res) => {
+    Extra.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(deleterow =>{
+        res.status(200).send({message:"item deleted successfully"})
+    }).catch(error => {
+        res.status(404).send({message: "item not found"})
+    })
+}
