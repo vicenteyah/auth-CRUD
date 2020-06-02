@@ -14,4 +14,8 @@ module.exports = function(app){
         "/api/Extra/extras/:id",
         controller.getAnExtraRequest
     );
+    app.delete(
+        "/api/Extra/extras/:id",
+        controller.deleteExtraRequest
+    );
 }
