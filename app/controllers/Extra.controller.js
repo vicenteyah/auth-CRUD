@@ -46,3 +46,21 @@ exports.deleteExtraRequest = (req, res) => {
         res.status(404).send({message: "item not found"})
     })
 }
+
+exports.updateExtraRequest = (req, res) => {
+    Extra.update({
+        imgurl: req.body.imgurl,
+        extraName: req.body.extraName,
+        price: req.body.price
+    },
+    {
+        where: {
+            id: req.params.id
+        }
+    }).then(extraupdate => {
+        res.status(200).send({message:"rows updated successfully"})
+        console.log(extraupdate);        
+    }).catch(error => {
+        res.status(404).send({message:'item not found'})
+    })
+}
