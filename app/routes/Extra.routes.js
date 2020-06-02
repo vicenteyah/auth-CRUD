@@ -18,4 +18,8 @@ module.exports = function(app){
         "/api/Extra/extras/:id",
         controller.deleteExtraRequest
     );
+    app.put(
+        "/api/Extra/extras/:id",
+        controller.updateExtraRequest
+    );
 }
