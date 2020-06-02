@@ -13,3 +13,24 @@ exports.createExtraRequest = (req, res) => {
         console.log(error);
     })
 }
+
+exports.getExtraRequest = (req, res) => {
+    Extra.findAll({}).then(extra => {
+        res.status(200).send(extra)
+    }).catch(error => {
+        res.status(404).send({message:"item not found"})
+        console.log(error);        
+    })
+}
+
+exports.getAnExtraRequest = (req, res) => {
+    Extra.findOne({
+        where:{
+            id: req.params.id
+        }
+    }).then(extra => {
+        res.status(200).send(extra)
+    }).catch(error => {
+        res.status(404).send({message:"item not found"})
+    })
+}
