@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize)=>{
     const Feedback = sequelize.define("feedbacks", {
-        completename: {
+        completename: { //completeName
             type: Sequelize.STRING
         },
         email:{

@@ -1,12 +1,9 @@
 module.exports = (sequelize, Sequelize) => {
-    const Promotion = sequelize.define("promotions", {
-        imgurl:{
+    const Additional = sequelize.define("additional", {
+        imgurl: {
             type: Sequelize.STRING
         },
-        packagename:{
-            type: Sequelize.STRING
-        },
-        description: {
+        additionalName: {
             type: Sequelize.STRING
         },
         price: {
@@ -14,5 +11,5 @@ module.exports = (sequelize, Sequelize) => {
         }
     });
 
-    return Promotion;
-};
+    return Additional;
+}
