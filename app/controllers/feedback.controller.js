@@ -37,3 +37,15 @@ exports.getAfeedback = (req,res)=>{
         res.status(404).send({message:'item not found'})
     })
 }
+
+exports.DeleteFeedbackRequest = (req,res) => {
+    Feedback.destroy({
+        where:{
+            id: req.params.id
+        }
+    }).then(deleteRow => {
+        res.status(200).send({message:'item deleted successfully'})
+    }).catch(error => {
+        res.status(404).send({message:'item not found'})
+    })
+}
