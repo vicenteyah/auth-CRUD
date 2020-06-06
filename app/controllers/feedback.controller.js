@@ -38,7 +38,7 @@ exports.getAfeedback = (req,res)=>{
     })
 }
 
-exports.DeleteFeedbackRequest = (req,res) => {
+exports.deleteFeedbackRequest = (req,res) => {
     Feedback.destroy({
         where:{
             id: req.params.id
