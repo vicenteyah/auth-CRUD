@@ -14,4 +14,8 @@ module.exports = function(app){
         "/api/Feedback/feedbacks/:id",
         controller.getAfeedback
     )
+    app.delete(
+        "/api/Feedback/feedbacks/:id",
+        controller.DeleteFeedbackRequest
+    );
 }
