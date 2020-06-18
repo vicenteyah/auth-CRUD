@@ -6,4 +6,8 @@ module.exports = function(app){
         "/api/Store/stores",
         controller.createStore
     );
+    app.delete (
+        "/api/Store/stores/:id",
+        controller.deleteStore
+    );
 }
