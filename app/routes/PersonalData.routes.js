@@ -10,4 +10,8 @@ module.exports = function (app){
         "/api/PersonalData/personaldata/:userId",
         controller.getAPersonalData
     );
+    app.put(
+        "/api/PersonalData/personaldata/:userId",
+        controller.updatePersonalData
+    );
 }
