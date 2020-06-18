@@ -14,4 +14,12 @@ module.exports = function(app){
         "/api/Feedback/feedbacks/:id",
         controller.getAfeedback
     )
+    app.delete(
+        "/api/Feedback/feedbacks/:id",
+        controller.deleteFeedbackRequest
+    )
+    app.put(
+        "/api/Feedback/feedbacks/:id",
+        controller.updateFeedbackRequest
+    )
 }

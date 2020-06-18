@@ -34,6 +34,7 @@ db.Pizza = require("../models/Pizza.model.js")(sequelize,Sequelize);
 db.Additional = require("../models/Additional.model.js")(sequelize, Sequelize);
 db.Extra = require("../models/Extra.model.js")(sequelize,Sequelize);
 db.PersonalData = require("../models/PersonalData.model.js")(sequelize,Sequelize);
+db.Store =  require("../models/Store.model.js")(sequelize, Sequelize);
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",
