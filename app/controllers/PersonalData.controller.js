@@ -27,3 +27,21 @@ exports.getAPersonalData = (req, res) => {
         res.status(404).send({message:"Data not found"})
     });
 }
+
+exports.updatePersonalData = (req, res) => {
+    PersonalData.update({        
+        nameData: req.body.nameData,
+        addressData:req.body.addressData,
+        phoneData:req.body.phoneData,
+        paymentMeth:req.body.paymentMeth
+    },
+    {
+        where: {
+            userId: req.params.userId
+        }
+    }).then(updatedata => {
+        res.status(200).send({message:"Personal Data updated successfully"})
+    }).catch(errror => {
+        res.status(404).send({message:"Personal data not found"})
+    })
+}
