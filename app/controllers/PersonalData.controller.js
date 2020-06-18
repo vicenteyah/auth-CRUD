@@ -15,3 +15,15 @@ exports.createPersonalData = (req, res) => {
         res.status(500).send({message:"Internal server error"})
     })
 }
+
+exports.getAPersonalData = (req, res) => {
+    PersonalData.findOne({
+        where: {
+            userId: req.params.userId
+        }
+    }).then(data => {
+        res.status(200).send(data)
+    }).catch(error => {
+        res.status(404).send({message:"Data not found"})
+    });
+}

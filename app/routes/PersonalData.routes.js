@@ -6,4 +6,8 @@ module.exports = function (app){
         "/api/PersonalData/personaldata",
         controller.createPersonalData
     );
+    app.get(
+        "/api/PersonalData/personaldata/:userId",
+        controller.getAPersonalData
+    );
 }
