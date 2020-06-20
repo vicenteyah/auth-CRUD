@@ -1,23 +1,21 @@
-# Node.js – JWT Authentication & Authorization example with JSONWebToken & Sequelize
+# JWT Authentication-CRUD
 
-For more detail, please visit:
-> [Node.js JWT Authentication & Authorization example](https://bezkoder.com/node-js-jwt-authentication-mysql/)
+## Built with
+- [Nodejs](https://nodejs.org/en/)
+- [Sequelize](https://sequelize.org/)
+- mysql
 
-> [Deploying/Hosting Node.js app on Heroku with MySQL database](https://bezkoder.com/deploy-node-js-app-heroku-cleardb-mysql/)
 
-Working with Front-end:
-> [Vue.js JWT Authentication with Vuex and Vue Router](https://bezkoder.com/jwt-vue-vuex-authentication/)
-
-> [Angular 8 JWT Authentication with HttpInterceptor and Router](https://bezkoder.com/angular-jwt-authentication/)
-
-> [React JWT Authentication (without Redux) example](https://bezkoder.com/react-jwt-auth/)
+## Contributors
+- **Vicente Yah** - _Maintenance_ - [@vicenteyah](https://github.com/vicenteyah)
+- **Sara Reyes** - _Maintenance_ - [@SariMelina](https://github.com/SariMelina)
 
 ## Project setup
-```
-npm install
+```bash
+$ npm i 
 ```
 
-### Run
-```
-node server.js
+### Run server with nodemon
+```bash
+npm start
 ```

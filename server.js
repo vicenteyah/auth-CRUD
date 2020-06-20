@@ -3,12 +3,14 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
+const morgan = require('morgan')
 
-var corsOptions = {
+app.use(morgan('dev'))
+/*var corsOptions = {
   origin: "http://localhost:8081"
-};
+};*/
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -35,7 +37,15 @@ app.get("/", (req, res) => {
 // routes
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
-
+require('./app/routes/JobExchanges.routes')(app);
+require('./app/routes/feedback.routes')(app);
+require('./app/routes/Promotion.routes')(app)
+require('./app/routes/Purchases.routes')(app)
+require('./app/routes/Pizza.routes')(app);
+require('./app/routes/Additional.routes')(app);
+require('./app/routes/Extra.routes')(app);
+require('./app/routes/PersonalData.routes')(app);
+require('./app/routes/Store.routes')(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
